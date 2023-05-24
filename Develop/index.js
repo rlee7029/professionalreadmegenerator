@@ -1,9 +1,11 @@
 
+//This is whewre I added the packaged i need for the application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 
+//This is the lists of question/array for user to input
 const questions = [
   {
     type: "input",
@@ -56,15 +58,17 @@ const questions = [
 
   }
 ];
-
+//This fucntion is to wrtie my README file
 function writeToFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
+        return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+      }
+    
 
+//This function is to initialize the app
 function init() {
-  inquirer.prompt(questions).then((responses) => {
+  inquirer.prompt(questions).then((userinput) => {
     console.log("Please wait for your README file is being created.");
-    writeToFile("./example", generateMarkdown({ ...responses }));
+    writeToFile("./example", generateMarkdown({ ...userinput }));
   });
 }
 init();

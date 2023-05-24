@@ -8,9 +8,9 @@ function renderLicenseLink(license){
 //Creating a function to generate markdown for README
 function generateMarkdown(data) {
     return `# ${data.title} 
-
-
   ${renderLicenseLink(data.license)}
+  
+  
   ## Title 
   ${data.title}
 
