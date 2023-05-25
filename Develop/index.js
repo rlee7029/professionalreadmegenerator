@@ -60,7 +60,10 @@ const questions = [
 ];
 //This fucntion is to wrtie my README file
 function writeToFile(fileName, data) {
-        return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+        return fs.writeFileSync(path.join(process.cwd(), fileName), data);{
+          if(err){
+            return console.log(err);
+          } }
       }
     
 
